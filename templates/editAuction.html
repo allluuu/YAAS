@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Edit your Auction{% endblock %}
+
+{% block content %}
+
+
+
+<p><b>Edit Blog: {{ title }}</b></p>
+    <form action="{% url 'editAuction' id %}" method="post">
+        {%  csrf_token %}
+        <p>Title: <input type="text" name="title" id="title" value="{{ title }}"></p>
+        <p>Description: <textarea name="description" cols="50" rows="20">{{ description }}</textarea></p>
+        <p>End_Date: <input type="date" name="end_date" value="{{ end_date }}"></p>
+        <p>Min_Price: <input type="number" name="min_price" value="{{ end_date }}"></p>
+        <input type="submit" value="Change">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}YAAS {% endblock %}</title>
+  </head>
+  <body>
+    <header>
+        <h1>Yet Another Auction Site</h1>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+         <form method="GET" action="{% url 'search' %}">
+             <input name="q" value="{{ request.GET.q }}" placeholder="search..">
+             <button class="btn btn-success" type="submit">
+                 Search
+             </button>
+         </form>
+
+        <a href="{% url 'home' %}"> Ho me</a>
+        {%  if user.is_superuser %}
+            <a href="{% url 'showAllBanned' %}">Show all banned auctions</a>
+
+            <a href="{%  url 'emailhistory' %}"> Show Email history</a>
+        {% endif %}
+
+
+        {% if user.is_authenticated %}
+            <h2> User: {{ user.username }}</h2>
+
+
+            <a href="{% url 'logout' %}">logout</a>
+
+            <a href="{% url 'addAuction' %}">Add new auction</a>
+
+            <a href="{% url 'editUser' user.id %}">Edit user</a>
+
+
+        {% else %}
+            <h2> User: Visitor</h2>
+
+
+
+            <a href="{% url 'login' %}">login</a>
+
+            <a href="{% url 'register' %}">signup</a>
+
+      {% endif %}
+      <hr>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>

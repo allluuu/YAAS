@@ -1,0 +1,18 @@
+<html>
+    <head>
+    <title>Auction Search</title>
+    </head>
+    <body>
+        {% if results %}
+            <p>Found {{ results|length }} auction.</p>
+            <ul>
+                {% for auction in results %}
+                    <li>{{ auction.title }}</li>
+                     <a href="{% url 'show_auction' auction.id %}">Show auction {{ auction.id }} </a>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No auction title matched your search criteria.</p>
+        {% endif %}
+    </body>
+</html>

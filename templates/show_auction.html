@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>{{ auction.title }}</h2>
+    {% if request.user == auction.seller %}
+        <a href="{% url 'editAuction' auction.id %}">Edit auction</a>
+    {% endif %}
+
+    <p>ID:{{ auction.id }}</p>
+    <p>Description: {{ auction.description }}</p>
+    <p>Seller: {{ auction.seller }}</p>
+    <p>Starting Date: {{ auction.start_date }}</p>
+    <p>End Date: {{ auction.end_date }}</p>
+    <p>Min Price: {{ auction.min_price }}</p>
+    <p>Winner: {{ auction.winner }}</p>
+    <p>Latest bid: {{ bid }}</p>
+
+    {% if request.user.is_superuser %}
+        <p>Lifecycle: {{ auction.lifecycle }}</p>
+         <a href="{% url 'banAuction' auction.id %}">ban this auction</a>
+        <a href="{% url 'activeAuction' auction.id %}">Activate this auction</a>
+    {% endif %}
+
+
+
+    <p><b>Make bid for auction  {{ title }}</b></p>
+        <form action="{% url 'makeBid' auction.id %}" method="post">
+            {%  csrf_token %}
+            <p>Bid: <input type="number" name="bid" value="{{ bid }}"></p>
+            <input type="submit" value="Bid">
+        </form>
+
+    <h3>Bid history</h3>
+    {% for auct in auction.get_history %}
+
+        <p> Bid :{{ auct }}</p>
+    {% endfor %}
+{% endblock %}

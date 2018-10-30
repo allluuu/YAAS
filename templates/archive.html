@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for post in auctions %}
+    <h2>{{ post.title }}</h2>
+    <a href="{% url 'show_auction' post.id %}">Show auction {{ post.id }} </a>
+    <p>Seller: {{ post.seller }}</p>
+    <p>Starting Date: {{ post.start_date }}</p>
+    <p>Min Price: {{ post.min_price }}</p>
+    {% if request.user.is_superuser %}
+        <p>Lifecycle: {{ post.lifecycle }}</p>
+    {% endif %}
+{% empty %}
+    <p>No auctions<p>
+{%  endfor %}
+{% endblock %}

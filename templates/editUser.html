@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Edit user{% endblock %}
+
+{% block content %}
+
+<p><b>Edit User: {{ user }}</b></p>
+    <form action="{% url 'editUser' id %}" method="post">
+        {%  csrf_token %}
+        <p>Email: <input type="email" name="email"  value="{{ email }}"></p>
+        <p>Password: <input type="password" name="password" value="{{ password }}"> </p>
+        <input type="submit" value="Change">
+    </form>
+
+{% endblock %}
