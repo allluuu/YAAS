@@ -1,12 +1,19 @@
-from celery import Celery
-from celery.schedules import crontab
-from .models import *
+from __future__ import absolute_import, unicode_literals
 from .views import *
-import datetime
+from datetime import *
+from celery import *
+from celery.task import periodic_task
+from celery.schedules import crontab
+
+app = Celery('tasks', broker='amqp://localhost//', backend='amqp')
 
 
-
-def resolve_auction(self, *args, **options):
+@periodic_task(
+    run_every=(crontab(minute='*/60')),
+    name='Resolve action',
+    ignore_result=True
+)
+def resolve_auction():
 
         auctions = Auction.objects.all().filter(lifecycle='A')
 
@@ -30,12 +37,12 @@ def resolve_auction(self, *args, **options):
 
             auc.lifecycle = 'E'
             auc.save()
-            #send_mail('Resolved',
-                     # 'Youre auction has finished',
-                     # 'admin@yaas.fi',
-                     # auc.seller.email,
-                     # fail_silently=False)
-
+            send_mail('Resolved',
+                      'Youre auction has finished',
+                      'admin@yaas.fi',
+                      auc.seller.email,
+                      fail_silently=False)
+            """
             # for bidders
             mails = []
             bid = Bid.objects.all().filter(auction=auc)
@@ -49,4 +56,4 @@ def resolve_auction(self, *args, **options):
                       'Auction in which you bid has resolved',
                       'admin@yaas.fi',
                       mails,
-                      fail_silently=False)
+                      fail_silently=False)"""
