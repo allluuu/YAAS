@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fcd0190-06ff-418f-8827-13e6e8853e65" name="Default Changelist" comment="celery shit (only settings)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.bak" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project" beforeDir="false" afterPath="$PROJECT_DIR$/Project" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
