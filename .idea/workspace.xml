@@ -6,15 +6,10 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fcd0190-06ff-418f-8827-13e6e8853e65" name="Default Changelist" comment="">
+    <list default="true" id="3fcd0190-06ff-418f-8827-13e6e8853e65" name="Default Changelist" comment="celery shit (only settings)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project" beforeDir="false" afterPath="$PROJECT_DIR$/Project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctionApp/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/celerybeat-schedule.bak" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dir" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerydb.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/celerydb.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celerybeat.pid" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,10 +73,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="bak" value="1" />
           <entry key="gitattributes" value="1" />
           <entry key="html" value="69" />
           <entry key="json" value="3" />
-          <entry key="py" value="145" />
+          <entry key="py" value="146" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
@@ -89,8 +85,8 @@
         <counts>
           <entry key="HTML" value="69" />
           <entry key="JSON" value="3" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="145" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="146" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
@@ -242,8 +238,8 @@
       <find>proj</find>
       <find>django_celery_results</find>
       <find>.now</find>
-      <find>bid</find>
       <find>installed</find>
+      <find>bid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -367,7 +363,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -708,7 +704,6 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/Project" />
-      <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="including models" />
     <MESSAGE value="Login, logout, register" />
@@ -734,12 +729,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Project/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auctionApp/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -1033,6 +1022,12 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celerybeat-schedule.bak">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/auctionApp/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
