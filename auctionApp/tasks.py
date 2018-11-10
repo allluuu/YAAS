@@ -26,10 +26,11 @@ def resolve_auction():
             difference_in_min = difference / timedelta(minutes=1)
 
             if difference_in_min < 1:
-                bid = get_object_or_404(Bid, auction=auc)
-                auc.lifecycle = 'D'
-                auc.winner = bid.bidder
-                auc.save()
+                bids = Bid.objects.all().filter(auction=auc)
+                for bid in bids:
+                    auc.lifecycle = 'D'
+                    auc.winner = bid.bidder
+                    auc.save()
 
         auctions = Auction.objects.all().filter(lifecycle='D')
 
@@ -40,7 +41,7 @@ def resolve_auction():
             send_mail('Resolved',
                       'Youre auction has finished',
                       'admin@yaas.fi',
-                      auc.seller.email,
+                      [auc.seller.email],
                       fail_silently=False)
             """
             # for bidders
