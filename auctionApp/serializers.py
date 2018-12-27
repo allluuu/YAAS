@@ -13,6 +13,7 @@ class AuctionDetailSerializers(serializers.ModelSerializer):
         fields = ('title', 'description', 'seller', 'start_date', 'end_date', 'min_price',
                   'lifecycle')
 
+
 class BidSeriaalizers(serializers.ModelSerializer):
     class Meta:
         model = Bid

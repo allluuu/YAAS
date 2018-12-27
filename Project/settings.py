@@ -131,7 +131,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 MESSAGE_LEVEL = message_constants.DEBUG
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/tmp/app-messages'
+EMAIL_FILE_PATH = '/Users/Aleksi/PycharmProjects/Project/email_backend'
 
 
 FIXTURE_DIRS = ('fixtures',)

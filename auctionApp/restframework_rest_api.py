@@ -58,6 +58,7 @@ class AuctionDetail(APIView):
         else:
             return Response(serializers.errors, status=400)
 
+@renderer_classes([JSONRenderer,])
 class BidAuction(APIView):
     #authentication_classes = (BasicAuthentication,)
     #permission_classes = (IsAuthenticated,)
@@ -69,10 +70,8 @@ class BidAuction(APIView):
         return Response(serializers.data)
 
     def post(self, request, pk):
-
         bid = get_object_or_404(Bid, pk=pk)
         data = request.data
-
         print(request.data)
         serializers = BidSeriaalizers(bid, data=data)
         if serializers.is_valid():
@@ -80,12 +79,6 @@ class BidAuction(APIView):
             return serializers.data
         else:
             return Response(serializers.errors, status=400)
-
-
-
-
-
-
 
 
 

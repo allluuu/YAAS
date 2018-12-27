@@ -27,6 +27,6 @@ urlpatterns = [
     path('api/auctions/', auction_list),
     path('api/auctions/<int:pk>', AuctionDetail.as_view()),
     path('api/auctions/<str:title>', search_list),
-    path('api/auctions/bid/<str:pk>', BidAuction.as_view()),
+    path('api/auctions/bid/<int:pk>', BidAuction.as_view()),
 ]
 

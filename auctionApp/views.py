@@ -147,9 +147,22 @@ def active_auction(request, id):
 
 def emailhistory(request):
 
-    path ="/tmp/app-messages"
+    path ="/Users/Aleksi/PycharmProjects/Project/email_backend"
     file_list = os.listdir(path)
-    return render(request, 'emailhistory.html', {'files': file_list})
+
+    new_dict = {}
+    i = 1
+
+    for filenames in file_list:
+        with open(os.path.join(path, filenames)) as myfile:
+
+            content = myfile.readline(10)
+
+            new_dict.update({'email'  + ":": file_list })
+            i = i+1
+
+
+    return render(request, 'emailhistory.html', {'files': new_dict})
 
 
 

@@ -9,7 +9,7 @@ app = Celery('tasks', broker='amqp://localhost//', backend='amqp')
 
 
 @periodic_task(
-    run_every=(crontab(minute='*/60')),
+    run_every=(crontab(minute='*/1')),
     name='Resolve action',
     ignore_result=True
 )
@@ -41,9 +41,10 @@ def resolve_auction():
             send_mail('Resolved',
                       'Youre auction has finished',
                       'admin@yaas.fi',
-                      [auc.seller.email],
+                      auc.seller.email,
+
                       fail_silently=False)
-            """
+
             # for bidders
             mails = []
             bid = Bid.objects.all().filter(auction=auc)
@@ -57,4 +58,4 @@ def resolve_auction():
                       'Auction in which you bid has resolved',
                       'admin@yaas.fi',
                       mails,
-                      fail_silently=False)"""
+                      fail_silently=False)
